@@ -16,12 +16,15 @@ namespace Test_Solution.Products
             set { expirationDate = value; }
         }
 
-        public Beverages(string name, string brand, int price, DateTime expirationDate) : base(name, brand, price)
+        public Beverages(string name, string brand, double price, double quantity, DateTime expirationDate, DateTime purchaseDate) : base(name, brand, price, quantity)
         {
             this.name = name;
             this.brand = brand;
             this.price = price;
+            this.quantity = quantity;
             this.expirationDate = expirationDate;
+            this.PurchaseDateTime = purchaseDate;
+            this.ProductType = PRODUCT_TYPE.BEVERAGE;
         }
     }
 }

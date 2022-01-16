@@ -26,13 +26,15 @@ namespace Test_Solution.Products
             set { color = value; }
         }
 
-        public Clothes(string name, string brand, int price, SIZE size, string color) : base(name, brand, price)
+        public Clothes(string name, string brand, double price, double quantity, SIZE size, string color) : base(name, brand, price, quantity)
         {
             this.name = name;
             this.brand = brand;
             this.price = price;
+            this.quantity = quantity;
             this.size = size;
             this.color = color;
+            this.ProductType = PRODUCT_TYPE.CLOTHES;
         }
     }
 }

@@ -17,12 +17,15 @@ namespace Test_Solution.Products
         }
 
 
-        public Food(string name, string brand, int price, DateTime expirationDate) : base(name, brand, price)
+        public Food(string name, string brand, double price, double quantity, DateTime expirationDate, DateTime purchaseDate) : base(name, brand, price, quantity)
         {
             this.name = name;
             this.brand = brand;
             this.price = price;
+            this.quantity = quantity;
             this.expirationDate = expirationDate;
+            this.PurchaseDateTime = purchaseDate;
+            this.ProductType = PRODUCT_TYPE.FOOD;
         }
 
 
