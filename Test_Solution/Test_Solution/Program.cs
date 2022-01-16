@@ -20,11 +20,13 @@ namespace Test_Solution
             double price;
             DateTime expirationDate;
             DateTime productionDate;
+            DateTime purchaseDate;
 
             string color;
             string brand;
             string model;
             double weight;
+            double quantity;
 
             Cashier cashier = new Cashier();
 
@@ -36,14 +38,14 @@ namespace Test_Solution
 
             cashier.AddToCart(new Appliances("laptop", "BrandL", 2345, 1, "ModelL", new DateTime(2021,03,03), 1.125));
 
-            /*
+            
             do
             {
                 Console.WriteLine("Add products: \n");
 
                 while(closing1 != 0)
                 {
-                    Console.WriteLine("Enter what type of product do you want (1: food, 2: beverage, 3:clothes, 4:appliance)?\n");
+                    Console.WriteLine("\nEnter what type of product do you want (1: food, 2: beverage, 3:clothes, 4:appliance, anything else for exit)\n");
                     //type_of_product = ;
                     switch (Convert.ToInt32(Console.ReadLine()))
                     {
@@ -59,13 +61,16 @@ namespace Test_Solution
                             Console.WriteLine("Enter quantity: \n");
                             quantity = Convert.ToDouble(Console.ReadLine());
 
-                            Console.WriteLine("Enter date time (in format year-month-day):\n");
+                            Console.WriteLine("Enter date time of expiration (in format year-month-day):\n");
                             expirationDate = Convert.ToDateTime(Console.ReadLine());
+
+                            Console.WriteLine("Enter date time of purchase (in format year-month-day):\n");
+                            purchaseDate = Convert.ToDateTime(Console.ReadLine());
 
                             Console.WriteLine("Enter brand of product:\n");
                             brand = Console.ReadLine();
 
-                            cashier.AddToCart(new Food(name, brand, price, quantity, expirationDate));
+                            cashier.AddToCart(new Food(name, brand, price, quantity, expirationDate, purchaseDate));
 
                             break;
                         case 2:
@@ -83,10 +88,13 @@ namespace Test_Solution
                             Console.WriteLine("Enter brand of product:\n");
                             brand = Console.ReadLine();
 
-                            Console.WriteLine("Enter date time (in format year-month-day):\n");
+                            Console.WriteLine("Enter date time of expiration (in format year-month-day):\n");
                             expirationDate = Convert.ToDateTime(Console.ReadLine());
 
-                            cashier.AddToCart(new Beverages(name, brand, price, quantity, expirationDate));
+                            Console.WriteLine("Enter date time of purchase (in format year-month-day):\n");
+                            purchaseDate = Convert.ToDateTime(Console.ReadLine());
+
+                            cashier.AddToCart(new Beverages(name, brand, price, quantity, expirationDate, purchaseDate));
 
                             break;
                         case 3:
@@ -101,7 +109,7 @@ namespace Test_Solution
                             Console.WriteLine("Enter quantity: \n");
                             quantity = Convert.ToDouble(Console.ReadLine());
 
-                            Console.WriteLine("Enter date time (in format year-month-day):\n");
+                            Console.WriteLine("Enter date time of expiration (in format year-month-day):\n");
                             expirationDate = Convert.ToDateTime(Console.ReadLine());
 
                             Console.WriteLine("Enter brand of product:\n");
@@ -125,7 +133,7 @@ namespace Test_Solution
                             Console.WriteLine("Enter quantity: \n");
                             quantity = Convert.ToDouble(Console.ReadLine());
 
-                            Console.WriteLine("Enter date time (in format year-month-day):\n");
+                            Console.WriteLine("Enter date time of production (in format year-month-day):\n");
                             productionDate = Convert.ToDateTime(Console.ReadLine());
 
                             Console.WriteLine("Enter brand of product:\n");
@@ -134,7 +142,7 @@ namespace Test_Solution
                             Console.WriteLine("Enter color for model: \n");
                             model = Console.ReadLine();
 
-                            Console.WriteLine("Enter color for weight: \n");
+                            Console.WriteLine("Enter weight: \n");
                             weight = Convert.ToDouble(Console.ReadLine());
 
                             cashier.AddToCart(new Appliances(name, brand, price, quantity, model, productionDate, weight));
@@ -150,7 +158,7 @@ namespace Test_Solution
 
                 closing2 = Convert.ToInt32(Console.ReadLine());
 
-            } while (closing2 != 0);*/
+            } while (closing2 != 0);
 
             cashier.PrintAllPurchasedProducts();
 
